@@ -122,7 +122,7 @@ export default function ContactFooter() {
       </div>
       <div className="max-w-4xl mx-auto text-center my-32">
         <h2 className="text-4xl mb-4 md:text-5xl font-bold text-black dark:text-white">
-          Contact{" "}
+          Connect with{" "}
           <span className="text-black dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-gray-400">
             Me
           </span>{" "}
