@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import heroBg from "../assets/heroBg.jpg";
 import heroBgLight from "../assets/heroBgLight.png";
 import { useTheme } from "next-themes";
-import TypewriterView from "./TypeWriterText";
+
 import {
   RiJavascriptFill,
   RiNextjsLine,
@@ -13,6 +13,7 @@ import {
 import { FaNodeJs, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
+import TypewriterView from "./TypewriterView";
 const LinkedInIcon = () => (
   <svg
     stroke="currentColor"
