@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 const TypewriterText = ({
-  text = " Hello I'm Raiyan Sohel...",
+  text = "Hi I'm Raiyan Sohel...",
   speed = 100,
   deleteSpeed = 50,
   pauseDuration = 2000,
@@ -51,7 +51,7 @@ const TypewriterText = ({
   ]);
   return (
     <div className={`font-sans ${className}`}>
-      <span className="text-4xl lg:text-5xl font-bold text-slate-800 dark:text-slate-200">
+      <span className="text-4xl lg:text-6xl font-bold text-slate-800 dark:text-slate-200">
         {displayText}
         {showCursor && (
           <motion.span
