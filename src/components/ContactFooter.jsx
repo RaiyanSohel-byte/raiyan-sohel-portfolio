@@ -133,7 +133,7 @@ export default function ContactFooter() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Email */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center  border border-gray-300 dark:border-gray-800 p-4 rounded-2xl">
             <div className="text-cyan-500 text-3xl mb-3">
               <FaEnvelope />
             </div>
@@ -146,7 +146,7 @@ export default function ContactFooter() {
           </div>
 
           {/* Phone */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center border border-gray-300 dark:border-gray-800 p-4 rounded-2xl">
             <div className="text-cyan-500 text-3xl mb-3">
               <FaPhoneAlt />
             </div>
@@ -157,7 +157,7 @@ export default function ContactFooter() {
           </div>
 
           {/* Location */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center  border border-gray-300 dark:border-gray-800 p-4 rounded-2xl">
             <div className="text-cyan-500 text-3xl mb-3">
               <FaMapMarkerAlt />
             </div>
