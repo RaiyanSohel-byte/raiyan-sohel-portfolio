@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+  themes: light --default;
+}
+@custom-variant dark (&:where(.dark, .dark *));
+.lobster {
+  font-family: "Lobster Two", sans-serif;
+}
+@layer base {
+  /* This is the key line for smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
