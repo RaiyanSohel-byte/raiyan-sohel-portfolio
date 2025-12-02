@@ -279,7 +279,7 @@ export default function SkillsSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-neutral-900 to-neutral-950 z-0" />
       <div className="absolute top-0 left-0 w-full mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
 
-      <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         {/* Left Section: Context & Grid (For readability) */}
         <div className="flex-1 w-full max-w-xl order-2 lg:order-1">
           <motion.div

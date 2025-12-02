@@ -49,12 +49,12 @@ export default function Hero() {
 const Portfolio2 = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex items-center justify-center font-sans pt-25 lg:pb-12">
+    <div className="flex items-center justify-center font-sans pt-25 lg:pb-12 px-6 lg:px-0">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative bg-white dark:bg-black rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-6xl p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
+        className="relative bg-white dark:bg-black rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-7xl p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
         style={{
           backgroundImage: `url(${theme === "light" ? heroBgLight : heroBg})`,
 
