@@ -45,7 +45,7 @@ export default function GradientAccordion() {
 function AccordionItem({ question, status, duration, institution }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="p-0.5 rounded-lg bg-gradient-to-r from-cyan-400 to-pink-500 dark:from-cyan-500 dark:to-pink-600">
+    <div className="p-0.5 rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-700 dark:from-cyan-500 dark:to-cyan-800">
       <div className="bg-gray-50 dark:bg-gray-800 rounded-md">
         <button
           onClick={() => setIsOpen(!isOpen)}

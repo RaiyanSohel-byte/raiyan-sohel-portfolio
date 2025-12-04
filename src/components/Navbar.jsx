@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
-import { HashLink } from "react-router-hash-link";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import ShimmerButton from "./ShimmerButton";
 import Logo from "./Logo";
@@ -11,6 +11,8 @@ const Navbar = ({ theme, setTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     { href: "#skills", text: "Skills" },
@@ -19,14 +21,14 @@ const Navbar = ({ theme, setTheme }) => {
     { href: "#contact", text: "Contact" },
   ];
 
-  // Scroll detection
+  // Scroll detection for navbar style
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto close menu on window resize
+  // Close menu on resize
   useEffect(() => {
     const handleResize = () => window.innerWidth >= 768 && setIsMenuOpen(false);
     window.addEventListener("resize", handleResize);
@@ -52,7 +54,21 @@ const Navbar = ({ theme, setTheme }) => {
 
     sections.forEach((section) => observer.observe(section));
     return () => sections.forEach((section) => observer.unobserve(section));
-  }, []);
+  }, [location.pathname]);
+
+  // Handle nav click with smooth scroll from any route
+  const handleNavClick = (hash) => {
+    if (location.pathname !== "/") {
+      navigate(`/${hash}`);
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -69,11 +85,10 @@ const Navbar = ({ theme, setTheme }) => {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
             {navLinks.map((link) => (
-              <HashLink
+              <button
                 key={link.text}
-                smooth
-                to={`/${link.href}`}
-                className={`text-sm lg:text-base font-medium transition-colors relative group ${
+                onClick={() => handleNavClick(link.href)}
+                className={`text-sm cursor-pointer  lg:text-base font-medium transition-colors relative group ${
                   activeSection === link.href
                     ? "text-gray-900 dark:text-white"
                     : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -87,14 +102,13 @@ const Navbar = ({ theme, setTheme }) => {
                       : "w-0 group-hover:w-full"
                   }`}
                 ></span>
-              </HashLink>
+              </button>
             ))}
           </nav>
 
           {/* Right side buttons */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
             <ShimmerButton />
-
             <a
               href="https://www.linkedin.com/in/raiyan-sohel/"
               target="_blank"
@@ -152,11 +166,12 @@ const Navbar = ({ theme, setTheme }) => {
 
               {/* Mobile nav links */}
               {navLinks.map((link) => (
-                <HashLink
+                <button
                   key={link.text}
-                  smooth
-                  to={`/${link.href}`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    handleNavClick(link.href);
+                    setIsMenuOpen(false);
+                  }}
                   className={`px-3 py-2.5 text-sm sm:text-base font-medium rounded-md transition-colors ${
                     activeSection === link.href
                       ? "text-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-white"
@@ -164,7 +179,7 @@ const Navbar = ({ theme, setTheme }) => {
                   }`}
                 >
                   {link.text}
-                </HashLink>
+                </button>
               ))}
 
               {/* Hire + Shimmer */}

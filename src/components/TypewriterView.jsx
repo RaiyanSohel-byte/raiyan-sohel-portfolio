@@ -50,7 +50,7 @@ const TypewriterText = ({
     loop,
   ]);
   return (
-    <div className={`font-sans ${className}`}>
+    <div>
       <span className="text-4xl lg:text-6xl font-extrabold text-slate-800 dark:text-slate-200">
         {displayText}
         {showCursor && (

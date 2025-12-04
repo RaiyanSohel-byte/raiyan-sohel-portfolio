@@ -43,13 +43,13 @@ const PortfolioHero = () => {
   };
 
   return (
-    <section className="relative  w-full min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] px-6 lg:px-12 pt-20 pb-12">
+    <section className="relative mt-7 w-full min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] px-6 lg:px-12 pt-20 pb-12">
       {/* --- Background Elements --- */}
       {/* 1. Grid Pattern */}
       <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       {/* 2. Gradient Orbs (Glow effects) */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-50 dark:bg-cyan-900/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
       <motion.div
@@ -76,7 +76,7 @@ const PortfolioHero = () => {
             className="text-4xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]"
           >
             Hi, I'm <br className="hidden lg:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500 dark:from-teal-400 dark:to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-500 dark:from-cyan-400 dark:to-blue-400">
               <TypewriterView />
             </span>
           </motion.h1>
@@ -127,6 +127,24 @@ const PortfolioHero = () => {
             </a>
           </motion.div>
 
+          {/* Tech Stack Strip */}
+          <motion.div variants={itemVariants} className="mt-10 lg:mt-7 w-full">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-black dark:text-gray-400">
+              <TechIcon Icon={RiJavascriptFill} color="hover:text-yellow-400" />
+              <TechIcon Icon={FaReact} color="hover:text-cyan-400" />
+              <TechIcon
+                Icon={RiNextjsLine}
+                color="hover:text-black dark:hover:text-white"
+              />
+              <TechIcon Icon={FaNodeJs} color="hover:text-green-500" />
+              <TechIcon
+                Icon={SiExpress}
+                color="hover:text-gray-600 dark:hover:text-gray-300"
+              />
+              <TechIcon Icon={SiMongodb} color="hover:text-green-600" />
+              <TechIcon Icon={RiTailwindCssFill} color="hover:text-cyan-500" />
+            </div>
+          </motion.div>
           {/* Socials (Desktop Layout) */}
           <motion.div
             variants={itemVariants}
@@ -152,7 +170,7 @@ const PortfolioHero = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Decorative Ring behind image */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-teal-500 to-blue-500 rounded-[2rem] rotate-6 opacity-30 blur-2xl dark:opacity-40"></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-blue-500 rounded-[2rem] rotate-6 opacity-30 blur-2xl dark:opacity-40"></div>
 
           <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden border-2 border-white/20 shadow-2xl bg-gray-100 dark:bg-gray-800">
             <img
