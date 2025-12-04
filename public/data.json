@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "RentWheels",
+    "image": "https://i.ibb.co.com/rGhxG8b2/rent-Wheels.png",
+    "longDetails": "Rent Wheels – A modern car rental web app where users can browse, search, and book cars easily. Built with React, Tailwind CSS, Node.js, Express, MongoDB, and Firebase.Hybrid Authentication: Utilized Firebase for seamless identity management (Google/Email) while implementing JWTs to secure backend API routes.Protected Routes: Custom middleware to verify tokens, ensuring only authenticated users can book vehicles or view history.Real-time Updates: Dynamic car availability and booking status.",
+    "details": "Rent Wheels – A modern car rental web application where users can browse, search, and book cars easily. Built with React, Tailwind CSS, Node.js, Express, MongoDB, and Firebase.",
+    "techs": ["React.js", "Node.js", "Express.js", "Mongo DB", "Firebase Auth"],
+    "features": [
+      "Browse and Search Cars: Easily browse cars",
+      "filter by categories (Sedan, SUV, Electric, Luxury, Hatchback), and search by name.",
+      "Sorting & Pagination: Sort cars by price (low → high / high → low) or posting date (newest/oldest) and load more cars seamlessly.",
+      "User Authentication: Secure login and registration system with Firebase Authentication.",
+      "Real-Time Notifications: Uses React Toastify for elegant toast alerts and SweetAlert2 for confirmation dialogs.",
+      "Interactive Contact Page: Includes contact form, office map, working hours, and professional social media links.",
+      "Responsive & Modern UI: Fully mobile-friendly, built with Tailwind CSS, Lottie React animations, and Framer Motion.",
+      "Backend Integration: Node.js, Express, and MongoDB for efficient car management, search, and booking functionality."
+    ],
+    "live": "https://stirring-gingersnap-70f67e.netlify.app/",
+    "gitHub": "https://github.com/RaiyanSohel-byte/rent-wheels-client"
+  },
+  {
+    "id": 2,
+    "name": "Prodexa",
+    "image": "https://i.ibb.co.com/dwV2rbs4/prodexa.png",
+    "longDetails": "Prodexa is a high-performance, scalable product and inventory management platform built with Next.js, React, and Tailwind CSS. It provides a seamless experience for adding, managing, and viewing products, with secure authentication powered by Firebase Auth",
+    "details": "Prodexa is a scalable full-stack product and inventory platform offering product creation, categorization, search, secure authentication, and a modern, clean UI/UX.",
+    "techs": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Mongo DB",
+      "Firebase Auth"
+    ],
+    "features": [
+      "Full CRUD operations for products",
+      "Real-time search functionality",
+      "Category-based filters and sorting",
+      "Clean, responsive product listing UI",
+      "Secure login & registration using Firebase Authentication",
+      "Protected routes",
+      "Session handling and state management",
+      "Built with Next.js + Tailwind CSS + DaisyUI",
+      "Toast notifications for user actions",
+      "Fully responsive and mobile-first",
+      "REST API using Node.js + Express",
+      "MongoDB database integration",
+      "Modular and scalable folder structure"
+    ],
+    "live": "https://prodexa-client-nine.vercel.app/",
+    "gitHub": "https://github.com/RaiyanSohel-byte/prodexa-client"
+  },
+  {
+    "id": 3,
+    "name": "SkillSwap",
+    "image": "https://i.ibb.co.com/xtmdF4vf/skill-Swap.png",
+    "longDetails": "SkillSwap is a full-stack skill-sharing platform that allows users to learn, teach, and exchange skills with others. It features secure authentication, dynamic UI interactions, and a powerful backend to support bookings, profile management, and skill listings.This project strengthened my full-stack development skills and gave me hands-on experience building a complete production-ready application. Feedback and suggestions are always welcome.",
+    "details": "SkillSwap is full-stack interactive platform for learning, teaching, and exchanging skills, featuring secure authentication, dynamic routing, responsive design, built with React and Firebase.",
+    "techs": [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "Mongo DB",
+      "Firebase Auth"
+    ],
+    "features": [
+      "Authentication & Security",
+      "JWT Authentication for secure API access",
+      "Firebase Authentication (Email + Google Login)",
+      "Private Routes based on login state",
+      "Data & User Interaction",
+      "Search, Sort, and Filter skill providers",
+      "Booking System for reserving skill sessions",
+      "MongoDB Database",
+      "CRUD operations for skills & user data"
+    ],
+    "live": "https://magenta-ganache-45c5e3.netlify.app/",
+    "gitHub": "https://github.com/RaiyanSohel-byte/skill-swap-client"
+  }
+]

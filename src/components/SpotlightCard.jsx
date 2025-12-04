@@ -2,6 +2,7 @@ import { span } from "framer-motion/client";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { RiLiveLine } from "react-icons/ri";
+import { Link } from "react-router";
 export default function SpotlightCard({ project }) {
   return (
     <>
@@ -68,26 +69,41 @@ export default function SpotlightCard({ project }) {
               {}
               <div className="flex flex-col gap-4 mt-8">
                 {}
-                <a
-                  href={project.live}
-                  target="_blank"
-                  className="flex items-center gap-2"
-                >
-                  <button className="flex items-center justify-center gap-3 w-full px-4 py-2.5 bg-gray-100 dark:bg-slate-800/60 backdrop-blur-sm text-black dark:text-white rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700/60 transition-colors duration-300 cursor-pointer">
-                    {}
-                    <RiLiveLine /> Live Demo
-                  </button>
-                  {}{" "}
-                </a>
+                <div className="lg:flex justify-between">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    className="flex items-center gap-2 mb-4 lg:mb-0"
+                  >
+                    <button className="flex items-center justify-center gap-3 w-full px-4 lg:px-8 py-2.5 bg-gray-100 dark:bg-slate-800/60 backdrop-blur-sm text-black dark:text-white rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700/60 transition-colors duration-300 cursor-pointer">
+                      {}
+                      <RiLiveLine /> Live Demo
+                    </button>
+                    {}{" "}
+                  </a>
+                  <a
+                    href={project.gitHub}
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    <button className="flex items-center justify-center gap-3 w-full px-4 lg:px-8 py-2.5 bg-gray-100 dark:bg-slate-800/60 backdrop-blur-sm text-black dark:text-white rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700/60 transition-colors duration-300 cursor-pointer">
+                      {}
+                      <FaGithub /> GitHub Link
+                    </button>
+                  </a>
+                </div>
                 <a
                   href={project.gitHub}
                   target="_blank"
                   className="flex items-center gap-2"
                 >
-                  <button className="flex items-center justify-center gap-3 w-full px-4 py-2.5 bg-gray-100 dark:bg-slate-800/60 backdrop-blur-sm text-black dark:text-white rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700/60 transition-colors duration-300 cursor-pointer">
+                  <Link
+                    to={`/productPage/${project.id}`}
+                    className="flex items-center justify-center gap-3 w-full px-4 py-2.5 bg-gray-100 dark:bg-slate-800/60 backdrop-blur-sm text-black dark:text-white rounded-lg border border-gray-300 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-700/60 transition-colors duration-300 cursor-pointer"
+                  >
                     {}
-                    <FaGithub /> GitHub Link
-                  </button>
+                    Project Details
+                  </Link>
                 </a>
               </div>
             </div>

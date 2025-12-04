@@ -75,6 +75,9 @@ const Portfolio2 = () => {
                 <TypewriterView />
               </span>
             </h1>
+            <h3 className="font-bold mt-2 text-xl text-gray-600 dark:text-gray-300">
+              MERN Stack Developer
+            </h3>
             <p className="mt-4 text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0">
               Crafting scalable full-stack applications using React, Next.js,
               Node.js, Express, and MongoDB. Delivering modern, performant, and

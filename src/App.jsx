@@ -8,18 +8,18 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import ContactFooter from "./components/ContactFooter";
 import Footer from "./components/Footer";
+import { useLoaderData } from "react-router";
 
 function App() {
   const { theme, setTheme } = useTheme();
+  const projects = useLoaderData();
   return (
     <div className="bg-gray-50 dark:bg-black space-y-8">
-      <Navbar theme={theme} setTheme={setTheme} />
       <Hero theme={theme} setTheme={setTheme} />
       <Skills />
       <About />
-      <Projects />
+      <Projects projects={projects} />
       <ContactFooter />
-      <Footer />
     </div>
   );
 }
