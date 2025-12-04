@@ -21,7 +21,7 @@ export default function GradientAccordion() {
     },
   ];
   return (
-    <div className="w-full max-w-2xl mx-auto mb-24">
+    <div className="w-full px-4 lg:px-0 max-w-2xl mx-auto mb-24">
       <h2 className="text-4xl mb-12 text-center md:text-5xl  font-bold text-black dark:text-white">
         My{" "}
         <span className="text-black dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-gray-400 ">

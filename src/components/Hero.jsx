@@ -1,226 +1,211 @@
-import me from "../assets/me.png";
 import React from "react";
 import { motion } from "framer-motion";
-import heroBg from "../assets/heroBg.jpg";
-import heroBgLight from "../assets/heroBgLight.png";
 import { useTheme } from "next-themes";
+import me from "../assets/me.png";
+import TypewriterView from "./TypewriterView";
 
+// Icons
 import {
   RiJavascriptFill,
   RiNextjsLine,
   RiTailwindCssFill,
 } from "react-icons/ri";
-import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMongodb } from "react-icons/si";
+import { FaNodeJs, FaReact, FaGithub, FaLinkedin } from "react-icons/fa"; // Simplified imports
+import { SiExpress, SiMongodb, SiTypescript } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
-import TypewriterView from "./TypewriterView";
-const LinkedInIcon = () => (
-  <svg
-    stroke="currentColor"
-    fill="currentColor"
-    strokeWidth="0"
-    viewBox="0 0 448 512"
-    height="1em"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-  </svg>
-);
-
-const GithubIcon = () => (
-  <svg
-    stroke="currentColor"
-    fill="currentColor"
-    strokeWidth="0"
-    viewBox="0 0 496 512"
-    height="1em"
-    width="1em"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-23.3 2.6-57.5 0 0 21.9-7 72.1 25.6 20.9-6.2 43.6-9.4 66.3-9.4 22.7 0 45.4 3.1 66.3 9.4 50.2-32.6 72.1-25.6 72.1-25.6 13.7 34.2 5.2 51 2.6 57.5 16 17.6 23.6 31.4 23.6 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"></path>
-  </svg>
-);
 
 export default function Hero() {
-  return <Portfolio2 />;
+  return <PortfolioHero />;
 }
 
-const Portfolio2 = () => {
+const PortfolioHero = () => {
   const { theme } = useTheme();
-  return (
-    <div className="flex items-center justify-center font-sans pt-25 lg:pb-12 px-6 lg:px-0">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative bg-white dark:bg-black rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 w-full max-w-7xl p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
-        style={{
-          backgroundImage: `url(${theme === "light" ? heroBgLight : heroBg})`,
 
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+  // Animation variants for staggered entrance
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <section className="relative  w-full min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] px-6 lg:px-12 pt-20 pb-12">
+      {/* --- Background Elements --- */}
+      {/* 1. Grid Pattern */}
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+      {/* 2. Gradient Orbs (Glow effects) */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-200 dark:bg-purple-900/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+      <motion.div
+        className="relative z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <main className="relative flex flex-col md:flex-row items-center justify-between gap-12 py-10">
-          {/* Text Section */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center md:text-left z-10 order-2 md:order-1"
+        {/* --- Text Content --- */}
+        <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start">
+          {/* Status Badge */}
+          <motion.div variants={itemVariants} className="mb-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 text-sm font-medium">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              Available for Work
+            </span>
+          </motion.div>
+
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-[1.1]"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white leading-tight">
-              <span className="text-black dark:text-white">
-                <TypewriterView />
-              </span>
-            </h1>
-            <h3 className="font-bold mt-2 text-xl text-gray-600 dark:text-gray-300">
+            Hi, I'm <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-500 dark:from-teal-400 dark:to-blue-400">
+              <TypewriterView />
+            </span>
+          </motion.h1>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-6 text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed"
+          >
+            A passionate{" "}
+            <span className="font-semibold text-gray-900 dark:text-gray-200">
               MERN Stack Developer
-            </h3>
-            <p className="mt-4 text-gray-600 dark:text-gray-300 text-base sm:text-lg md:text-xl max-w-md mx-auto md:mx-0">
-              Crafting scalable full-stack applications using React, Next.js,
-              Node.js, Express, and MongoDB. Delivering modern, performant, and
-              user-friendly digital experiences.
-            </p>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-6 flex gap-3 items-center justify-center lg:justify-start"
+            </span>{" "}
+            crafting scalable full-stack applications. I build accessible,
+            pixel-perfect, and performant web experiences.
+          </motion.p>
+
+          {/* Action Buttons */}
+          <motion.div
+            variants={itemVariants}
+            className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          >
+            <a
+              href="https://linkedin.com/in/raiyan-sohel"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto"
             >
-              <span>
-                <RiJavascriptFill
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <RiTailwindCssFill
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <FaReact
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <RiNextjsLine
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <FaNodeJs
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <SiExpress
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-              <span>
-                <SiMongodb
-                  size={24}
-                  color={theme === "dark" ? "white" : "black"}
-                />
-              </span>
-            </motion.div>
-            <a href="https://linkedin.com/in/raiyan-sohel" target="_blank">
-              {" "}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-8 bg-black dark:bg-white text-white dark:text-black font-bold py-3 px-10 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors cursor-pointer"
+              <a
+                href="https://www.linkedin.com/in/raiyan-sohel"
+                target="_blank"
               >
-                Hire Me
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full sm:w-auto px-8 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold rounded-md shadow-lg cursor-pointer hover:shadow-xl transition-all"
+                >
+                  Hire Me
+                </motion.button>
+              </a>
+            </a>
+            <a
+              href="https://drive.google.com/file/d/17uCqrmRqWdH3F0a9fJJtKi2TdTfyD_YH/view?usp=drive_link"
+              target="_blank"
+            >
+              <button className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-semibold rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+                Resume
+              </button>
             </a>
           </motion.div>
 
-          {/* Image Section */}
+          {/* Socials (Desktop Layout) */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-64 sm:w-72 md:w-80 lg:w-96 h-64 sm:h-72 md:h-80 lg:h-96 flex-shrink-0 order-1 md:order-2"
+            variants={itemVariants}
+            className="mt-8 flex gap-6 text-gray-500 dark:text-gray-400"
           >
-            {/* Existing blob + image */}
-            <svg
-              viewBox="0 0 200 200"
-              xmlns="http://www.w3.org/2000/svg"
-              className="absolute w-full h-full"
-            >
-              <path
-                fill="currentColor"
-                className="text-black dark:text-white"
-                d="M48.8,-63.9C62.9,-54.2,73.8,-40.1,78.2,-24.5C82.6,-8.9,80.5,8.2,74.5,23.6C68.5,39,58.6,52.7,45.5,62.3C32.4,71.9,16.2,77.4,-1.8,78.8C-19.8,80.2,-39.6,77.5,-53.4,67.7C-67.2,57.9,-75,41,-76.8,24.2C-78.5,7.4,-74.2,-9.3,-66.5,-23.7C-58.8,-38.1,-47.7,-50.3,-34.9,-60.1C-22.1,-69.9,-7.6,-77.4,7.9,-78.9C23.4,-80.4,46.8,-75.9,48.8,-63.9Z"
-                transform="translate(100 100)"
-              />
-            </svg>
+            <SocialLink
+              href="https://linkedin.com/in/raiyan-sohel"
+              Icon={FaLinkedin}
+            />
+            <SocialLink
+              href="https://github.com/RaiyanSohel-byte"
+              Icon={FaGithub}
+            />
+            <SocialLink href="https://x.com/RaiyanSohel1" Icon={FaXTwitter} />
+          </motion.div>
+        </div>
+
+        {/* --- Image Section --- */}
+        <motion.div
+          className="relative flex-shrink-0"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Decorative Ring behind image */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-teal-500 to-blue-500 rounded-[2rem] rotate-6 opacity-30 blur-2xl dark:opacity-40"></div>
+
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-[2rem] overflow-hidden border-2 border-white/20 shadow-2xl bg-gray-100 dark:bg-gray-800">
             <img
               src={me}
-              alt="me"
-              className="absolute w-full h-full object-cover rounded-full border-4 border-gray-900 dark:border-gray-300"
-              style={{ clipPath: "url(#blob-clip)" }}
+              alt="Raiyan Sohel"
+              className="w-full h-full object-cover"
               onError={(e) => {
-                e.target.onerror = null;
                 e.target.src =
-                  "https://placehold.co/400x400/000000/FFFFFF?text=Image";
+                  "https://placehold.co/400x400/1a1a1a/FFFFFF?text=Avatar";
               }}
             />
-            <svg width="0" height="0">
-              <defs>
-                <clipPath id="blob-clip" clipPathUnits="objectBoundingBox">
-                  <path
-                    d="M0.244,-0.32C0.315,-0.271,0.369,-0.2,0.391,-0.122C0.413,-0.045,0.402,0.041,0.373,0.118C0.343,0.195,0.293,0.263,0.227,0.312C0.162,0.359,0.081,0.387,-0.009,0.394C-0.099,0.401,-0.198,0.387,-0.267,0.339C-0.336,0.289,-0.375,0.205,-0.384,0.121C-0.393,0.037,-0.371,-0.047,-0.333,-0.119C-0.294,-0.191,-0.239,-0.251,-0.175,-0.3C-0.111,-0.35,-0.038,-0.387,0.04,-0.395C0.117,-0.402,0.234,-0.38,0.244,-0.32Z"
-                    transform="matrix(2.5, 0, 0, 2.5, 0.5, 0.5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </motion.div>
-        </main>
-
-        {/* Social Icons (unchanged) */}
-        <motion.footer
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex justify-center pt-8 pb-4 md:p-0 md:justify-start md:absolute md:bottom-8 md:left-8 lg:bottom-12 lg:left-12"
-        >
-          <div className="flex space-x-6 text-gray-500 dark:text-gray-400 text-lg md:text-xl">
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://www.linkedin.com/in/raiyan-sohel"
-              target="_blank"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              <LinkedInIcon />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://github.com/RaiyanSohel-byte"
-              target="_blank"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              <GithubIcon />
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://x.com/RaiyanSohel1"
-            >
-              <FaXTwitter className="hover:text-black dark:hover:text-white transition-colors" />
-            </motion.a>
           </div>
-        </motion.footer>
+
+          {/* Floating Card Element (Optional detail) */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="absolute -bottom-6 -left-6 bg-white dark:bg-[#1a1a1a] p-4 rounded-xl shadow-xl border border-gray-100 dark:border-gray-800 flex items-center gap-3"
+          >
+            <div className="bg-blue-50 dark:bg-green-900/30 p-2 rounded-full text-[#377cc8]">
+              <SiTypescript size={20} />
+            </div>
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                Latest Focus
+              </p>
+              <p className="text-sm font-bold text-gray-900 dark:text-white">
+                Typescript
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
-    </div>
+    </section>
   );
 };
+
+// Reusable Components for cleanliness
+const TechIcon = ({ Icon, color }) => (
+  <div
+    className={`p-3 bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 transition-colors duration-300 ${color} cursor-pointer group`}
+  >
+    <Icon className="text-2xl group-hover:scale-110 transition-transform" />
+  </div>
+);
+
+const SocialLink = ({ href, Icon }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="hover:text-gray-900 dark:hover:text-white transition-colors"
+  >
+    <Icon className="text-2xl" />
+  </a>
+);
