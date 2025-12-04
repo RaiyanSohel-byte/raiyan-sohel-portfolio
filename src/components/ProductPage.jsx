@@ -58,6 +58,26 @@ const ProductPage = () => {
       <div className="py-24 transition-colors duration-300">
         {/* Main Content Grid */}
         <main className="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20">
+          <motion.button
+            onClick={() => navigate(-1)}
+            className="cursor-pointer text-base font-semibold flex items-center gap-2 lg:hidden text-gray-600 dark:text-gray-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group"
+            whileHover={{ x: -5 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <IoReturnUpBackOutline className="text-2xl group-hover:scale-110 transition-transform" />
+            Back to Portfolio
+          </motion.button>
+          {/* Image Container with Shadow/Glow */}
+          <div className="aspect-[5/3] w-full rounded-3xl overflow-hidden relative shadow-2xl lg:hidden dark:shadow-cyan-500/10">
+            <motion.img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-full object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.7 }}
+              loading="lazy"
+            />
+          </div>
           {/* Left Column: Image + Back Button */}
           <motion.section
             className="space-y-4 relative order-2 lg:order-1"
@@ -68,7 +88,7 @@ const ProductPage = () => {
             {/* Redesigned Back Button */}
             <motion.button
               onClick={() => navigate(-1)}
-              className="cursor-pointer text-base font-semibold flex items-center gap-2 mb-8 text-gray-600 dark:text-gray-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group"
+              className="cursor-pointer text-base font-semibold lg:flex items-center gap-2 mb-8 text-gray-600 dark:text-gray-400 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors group hidden"
               whileHover={{ x: -5 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -77,7 +97,7 @@ const ProductPage = () => {
             </motion.button>
 
             {/* Image Container with Shadow/Glow */}
-            <div className="aspect-[5/3] w-full rounded-3xl overflow-hidden relative shadow-2xl dark:shadow-cyan-500/10">
+            <div className="aspect-[5/3] hidden lg:block w-full rounded-3xl overflow-hidden relative shadow-2xl dark:shadow-cyan-500/10">
               <motion.img
                 src={project.image}
                 alt={project.name}

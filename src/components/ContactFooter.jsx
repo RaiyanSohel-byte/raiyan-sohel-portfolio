@@ -213,7 +213,7 @@ export default function ContactFooter() {
                   whileTap={{ scale: 0.98 }}
                   disabled={loading}
                   type="submit"
-                  className="w-full py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-gray-900 dark:bg-white text-white dark:text-black font-bold rounded-md shadow-lg hover:shadow-xl hover:bg-gray-800 dark:hover:bg-gray-200 transition-all flex cursor-pointer items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     "Sending..."

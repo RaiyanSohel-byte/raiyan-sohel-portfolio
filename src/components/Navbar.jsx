@@ -150,19 +150,21 @@ const Navbar = ({ theme, setTheme }) => {
         >
           <div className="py-4 border-t border-gray-200 dark:border-gray-800">
             <div className="flex flex-col space-y-1">
-              {/* Theme toggle */}
-              {theme === "dark" ? (
-                <MdOutlineWbSunny
-                  color="white"
-                  onClick={() => setTheme("light")}
-                  className="cursor-pointer ml-3"
-                />
-              ) : (
-                <FaRegMoon
-                  onClick={() => setTheme("dark")}
-                  className="cursor-pointer ml-3"
-                />
-              )}
+              <div className="flex justify-center w-full mx-auto">
+                {/* Theme toggle */}
+                {theme === "dark" ? (
+                  <MdOutlineWbSunny
+                    color="white"
+                    onClick={() => setTheme("light")}
+                    className="cursor-pointer"
+                  />
+                ) : (
+                  <FaRegMoon
+                    onClick={() => setTheme("dark")}
+                    className="cursor-pointer "
+                  />
+                )}
+              </div>
 
               {/* Mobile nav links */}
               {navLinks.map((link) => (
