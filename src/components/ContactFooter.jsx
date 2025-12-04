@@ -70,13 +70,13 @@ export default function ContactFooter() {
           viewport={{ once: true }}
           className="flex-1"
         >
-          <h2 className="text-4xl mb-4 md:text-5xl font-bold text-black dark:text-white">
+          <h2 className="text-4xl mb-4 md:text-5xl font-bold text-black dark:text-white text-center">
             Contact{" "}
             <span className="text-black dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-white dark:to-gray-400">
               Me
             </span>{" "}
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6 text-center">
             Have a project or idea? Send me a message and I’ll get back to you.
           </p>
 

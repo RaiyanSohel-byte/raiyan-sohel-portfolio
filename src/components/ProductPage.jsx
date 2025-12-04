@@ -17,7 +17,7 @@ const ProductPage = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="py-18 min-h-screen transition-colors duration-300 text-gray-900 dark:bg-[#050505] dark:text-gray-100 font-sans">
+      <div className="py-24 min-h-screen transition-colors duration-300 text-gray-900 dark:bg-[#050505] dark:text-gray-100 font-sans">
         {/* Main Content */}
         <main className="max-w-7xl mx-auto px-4 md:px-6 py-8 grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20">
           {/* Left Column: Image + Go Back Button */}
@@ -29,11 +29,11 @@ const ProductPage = () => {
           >
             <button
               onClick={() => navigate(-1)}
-              className="cursor-pointer text-xl font-bold flex items-center gap-2 mb-3"
+              className="cursor-pointer text-xl font-bold flex items-center gap-2 mb-8"
             >
               <IoReturnUpBackOutline /> Go Back
             </button>
-            <div className="aspect-[5/3] w-full overflow-hidden relative">
+            <div className="aspect-[5/3] w-full border border-gray-300 dark:border-gray-100 rounded-3xl overflow-hidden relative">
               <motion.img
                 src={project.image}
                 alt={project.name}

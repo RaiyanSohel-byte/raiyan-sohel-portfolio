@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import ContactFooter from "./components/ContactFooter";
 import Footer from "./components/Footer";
 import { useLoaderData } from "react-router";
+import GradientAccordion from "./components/GradientAccordion";
 
 function App() {
   const { theme, setTheme } = useTheme();
@@ -19,6 +20,7 @@ function App() {
       <Skills />
       <About />
       <Projects projects={projects} />
+      <GradientAccordion />
       <ContactFooter />
     </div>
   );
