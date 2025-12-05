@@ -58,20 +58,21 @@ export default function AboutSection() {
           </div>
 
           <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg mb-6">
-            I am a <span className="font-bold">MERN-Stack</span> web developer
-            passionate about building modern, visually engaging, and highly
-            optimized digital experiences. My focus is on creating clean
-            interfaces, smooth animations, and scalable architecture using
-            cutting-edge web technologies.
+            I’m a <span className="font-bold">MERN-Stack</span> developer whose
+            journey began with small web experiments and gradually grew into a
+            strong passion for building modern, visually engaging, and
+            high-performance digital experiences. I enjoy crafting clean
+            interfaces, smooth animations, and scalable backend systems that
+            turn ideas into reliable, user-focused products.
           </p>
 
           <p className="text-neutral-600 dark:text-neutral-300 leading-relaxed text-lg mb-8">
-            With a strong foundation in both{" "}
-            <span className="font-bold">frontend</span> and{" "}
-            <span className="font-bold mr-2">backend</span>
-            development, I bring ideas to life by combining creativity,
-            performance, and long-term maintainability. I love solving problems,
-            learning new technologies, and refining my craft every day.
+            I’m driven by curiosity, problem-solving, and the excitement of
+            learning new technologies. Projects that blend creativity with
+            technical depth are where I feel most at home. Outside of coding, I
+            stay inspired through activities like sports, traveling, and
+            creative interests such as drawing and music each adding a fresh
+            perspective to my work and personal growth.
           </p>
 
           <div className="flex gap-4 mt-6">
