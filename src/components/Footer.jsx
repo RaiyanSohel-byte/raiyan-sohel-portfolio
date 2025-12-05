@@ -5,12 +5,30 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Logo from "./Logo";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // navigate to home then scroll to hash (works from any route)
+  const handleNavClick = (hash) => {
+    if (location.pathname !== "/") {
+      // navigate to root with the hash in the URL, then scroll shortly after
+      navigate(`/${hash}`);
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 120); // small delay to let the page mount
+    } else {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -48,10 +66,35 @@ export default function Footer() {
             <h4 className="text-sm font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-2">
               Navigation
             </h4>
-            <FooterLink href="#about">About Me</FooterLink>
-            <FooterLink href="#projects">Projects</FooterLink>
-            <FooterLink href="#skills">Tech Stack</FooterLink>
-            <FooterLink href="#contact">Contact</FooterLink>
+
+            {/* use buttons that trigger handleNavClick so they work from any route */}
+            <button
+              onClick={() => handleNavClick("#about")}
+              className="text-gray-600 cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit text-left"
+            >
+              About Me
+            </button>
+
+            <button
+              onClick={() => handleNavClick("#projects")}
+              className="text-gray-600 cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit text-left"
+            >
+              Projects
+            </button>
+
+            <button
+              onClick={() => handleNavClick("#skills")}
+              className="text-gray-600 cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit text-left"
+            >
+              Tech Stack
+            </button>
+
+            <button
+              onClick={() => handleNavClick("#contact")}
+              className="text-gray-600 cursor-pointer dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit text-left"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Column 3: Socials & CTA */}
@@ -77,6 +120,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/in/raiyan-sohel"
                 target="_blank"
+                rel="noreferrer"
               >
                 <button className="text-sm font-bold text-gray-900 dark:text-white flex items-center gap-1 hover:gap-2 transition-all cursor-pointer">
                   Let's work together <BsArrowUpRight />
@@ -105,15 +149,6 @@ export default function Footer() {
 }
 
 // --- Helper Components ---
-
-const FooterLink = ({ href, children }) => (
-  <a
-    href={href}
-    className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors w-fit"
-  >
-    {children}
-  </a>
-);
 
 const SocialIcon = ({ href, Icon }) => (
   <a
