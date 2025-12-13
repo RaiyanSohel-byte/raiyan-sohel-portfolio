@@ -1,6 +1,26 @@
 [
   {
     "id": 1,
+    "name": "Sage",
+    "image": "https://i.ibb.co.com/v4TDQtRD/dash.png",
+    "longDetails": "Rent Wheels – A modern car rental web app where users can browse, search, and book cars easily. Built with React, Tailwind CSS, Node.js, Express, MongoDB, and Firebase.Hybrid Authentication: Utilized Firebase for seamless identity management (Google/Email) while implementing JWTs to secure backend API routes.Protected Routes: Custom middleware to verify tokens, ensuring only authenticated users can book vehicles or view history.Real-time Updates: Dynamic car availability and booking status.",
+    "details": "Sage is a full-stack platform where users can create, organize, and share meaningful life lessons, personal growth insights, and wisdom.",
+    "techs": ["React.js", "Node.js", "Express.js", "Mongo DB", "Firebase Auth"],
+    "features": [
+      "User Authentication: Secure email/password and Google login.",
+      "Premium Access: Upgrade via Stripe to unlock premium lessons and features.",
+      "Lesson Management: Create, update, delete, and save lessons with visibility control (Public / Private) and access level (Free / Premium).",
+      "Public Lessons Browser: Explore wisdom from the community with search, filter, and sort options.",
+      "Dashboard: Personal dashboard showing stats, recent lessons, and quick actions.",
+      "Admin Panel: Manage users, moderate lessons, and track platform-wide analytics.",
+      "Responsive Design: Fully optimized for mobile, tablet, and desktop views.",
+      "Beautiful UI: Modern, visually appealing design with consistent typography, spacing, and buttons."
+    ],
+    "live": "https://sage-client-blond.vercel.app",
+    "gitHub": "https://github.com/RaiyanSohel-byte/sage-client"
+  },
+  {
+    "id": 2,
     "name": "RentWheels",
     "image": "https://i.ibb.co.com/rGhxG8b2/rent-Wheels.png",
     "longDetails": "Rent Wheels – A modern car rental web app where users can browse, search, and book cars easily. Built with React, Tailwind CSS, Node.js, Express, MongoDB, and Firebase.Hybrid Authentication: Utilized Firebase for seamless identity management (Google/Email) while implementing JWTs to secure backend API routes.Protected Routes: Custom middleware to verify tokens, ensuring only authenticated users can book vehicles or view history.Real-time Updates: Dynamic car availability and booking status.",
@@ -20,7 +40,7 @@
     "gitHub": "https://github.com/RaiyanSohel-byte/rent-wheels-client"
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Prodexa",
     "image": "https://i.ibb.co.com/dwV2rbs4/prodexa.png",
     "longDetails": "Prodexa is a high-performance, scalable product and inventory management platform built with Next.js, React, and Tailwind CSS. It provides a seamless experience for adding, managing, and viewing products, with secure authentication powered by Firebase Auth",
@@ -52,7 +72,7 @@
     "gitHub": "https://github.com/RaiyanSohel-byte/prodexa-client"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "SkillSwap",
     "image": "https://i.ibb.co.com/xtmdF4vf/skill-Swap.png",
     "longDetails": "SkillSwap is a full-stack skill-sharing platform that allows users to learn, teach, and exchange skills with others. It features secure authentication, dynamic UI interactions, and a powerful backend to support bookings, profile management, and skill listings.This project strengthened my full-stack development skills and gave me hands-on experience building a complete production-ready application. Feedback and suggestions are always welcome.",
