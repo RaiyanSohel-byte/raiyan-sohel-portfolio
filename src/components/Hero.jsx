@@ -118,7 +118,7 @@ const PortfolioHero = () => {
               </a>
             </a>
             <a
-              href="https://drive.google.com/file/d/17uCqrmRqWdH3F0a9fJJtKi2TdTfyD_YH/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1aDC3UGUeLxYG1FIWLC7bJFJ8y6lxT3KF/view?usp=sharing"
               target="_blank"
             >
               <button className="w-full sm:w-auto px-8 py-3 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white font-semibold rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">

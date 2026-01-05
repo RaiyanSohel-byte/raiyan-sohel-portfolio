@@ -20,7 +20,7 @@ export default function ShimmerButton() {
     <div className="flex items-center justify-center font-sans ">
       <style>{customCss}</style>
       <a
-        href="https://drive.google.com/file/d/17uCqrmRqWdH3F0a9fJJtKi2TdTfyD_YH/view?usp=sharing"
+        href="https://drive.google.com/file/d/1aDC3UGUeLxYG1FIWLC7bJFJ8y6lxT3KF/view?usp=sharing"
         target="_blank"
       >
         <button className="relative inline-flex items-center justify-center p-[1.5px] bg-gray-300 dark:bg-black rounded-lg overflow-hidden group cursor-pointer">
